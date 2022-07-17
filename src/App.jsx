@@ -2,8 +2,10 @@
 import "./App.css";
 import Footer from "./Footer";
 import Header from "./Header";
+import { getProducts } from "./services/productService";
+import useFetch from "./services/useFetch";
 
-const products = [
+/* const products = [
     {
       "id": 1,
       "category": "shoes",
@@ -41,11 +43,17 @@ const products = [
       ],
       "description": "Look stylish while stomping in the mud."
     }
-  ]
+  ] */
 
 
 export default function App() {
-    const [size, setSize] = useState(null)
+    //size state for holding no of items desplayed
+    const [size, setSize] = useState("");
+    
+    const { data:products, loading, error } = useFetch(
+    "products?category=shoes"
+  ); 
+
   function renderProduct(p) {
     return (
       <div key={p.id} className="product">
@@ -58,6 +66,10 @@ export default function App() {
     );
   }
 
+  
+  const filteredProducts = size ? products.filter(p => p.skus.find(s => s.size === parseInt(size))) : products  
+
+  if(error){ console.log(error); throw error;}
   return (
     <>
       <div className="content">
@@ -75,8 +87,9 @@ export default function App() {
               <option value="9">9</option>
             </select>
           </section>
+          <h2>{filteredProducts.length} items found</h2>
           <section id="products">
-            {products.map(renderProduct)}
+            {filteredProducts.map(renderProduct)}
           </section>
         </main>
       </div>

@@ -69,6 +69,7 @@ header li {
 #products {
     display: flex;
     justify-content: center;
+    padding-right: 5px;
 }
 
 .product {

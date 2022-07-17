@@ -75,7 +75,7 @@ header li {
 .product {
     display: flex;
     align-items: flex-end;
-    max-width: 350px;
+    max-width: 170px;
     text-align: center;
 }
 

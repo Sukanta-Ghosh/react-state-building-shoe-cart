@@ -14,10 +14,10 @@ export default function Header() {
             <Link to="/"><img alt="Carved Rock Fitness" src="/images/logo.png" /></Link>           
           </li>
           <li>
-            <NavLink to="/shoes" activeStyle={activeStyle}>Shoes</NavLink>           
+            <NavLink to="/shoes" >Shoes</NavLink>  {/*TODO: activeStyle={activeStyle} property causing error */}         
           </li>
           <li>
-            <NavLink to="/cart" activeStyle={activeStyle}>Cart</NavLink>           
+            <NavLink to="/cart" >Cart</NavLink>   {/*TODO: activeStyle={activeStyle} property causing error */}          
           </li>
         </ul>
       </nav>

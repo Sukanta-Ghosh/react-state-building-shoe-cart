@@ -15,3 +15,15 @@
    2. NavLink supports custom styling when the link is active.
 8. Fetching based on URL parameter
 9. Redirection via useNavigation
+
+## Managing Shared, Derived and Immutable State
+
+1. Creating a Shoe Size Select.
+2. Implementing Derived State
+   1. In Derived State we don't have to declare any new state, we can rely upon the state we already declared, don't have to worry about getting out of sync.
+3. Lifting cart state
+4. Handling Immutability
+5. Displaying Cart Item
+6. Implementing Immutable friendly update
+7. Implementing Immutable friendly delete(Use Array.filter)
+8. lazy Initializing State and Persisting State to localStorage

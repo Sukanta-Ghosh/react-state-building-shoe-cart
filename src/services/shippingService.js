@@ -1,5 +1,6 @@
 const baseUrl = process.env.REACT_APP_API_BASE_URL;
 
+/* These functionas are wrapper around fetch. */
 export async function getShippingAddress(userId) {
   return fetch(baseUrl + "shippingAddress/" + userId).then((response) => {
     if (response.ok) return response.json();

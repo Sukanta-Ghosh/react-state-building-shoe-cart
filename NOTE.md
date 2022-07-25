@@ -27,3 +27,10 @@
 6. Implementing Immutable friendly update
 7. Implementing Immutable friendly delete(Use Array.filter)
 8. lazy Initializing State and Persisting State to localStorage
+
+## Implementing Form Validation
+
+Derived state benefits:
+
+1. Reduced the amount of state we had to store
+2. Assures error state is valid because it recalculates on each render

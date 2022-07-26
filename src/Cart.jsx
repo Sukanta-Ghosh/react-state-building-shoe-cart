@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom"
 import useFetchAll from "./services/useFetchAll";
 import Spinner from "./Spinner";
 
-export default function Cart({ cart, updateQuantity }) {
+export default function Cart({ cart, dispatch }) {
   const navigate = useNavigate()
   //Each time the cart renders, the urls array is recreated
   const urls = cart.map((i) => `products/${i.id}`);
@@ -32,7 +32,7 @@ export default function Cart({ cart, updateQuantity }) {
             {/* Dropdown to changing the quantity which uses update quantity prop */}
             <select
               aria-label={`Select quantity for ${name} size ${size}`}
-              onChange={(e) => updateQuantity(sku, parseInt(e.target.value))}
+              onChange={(e) => dispatch({type: "updateQuantity", sku, quantity: parseInt(e.target.value)})}
               value={quantity}
             >
               <option value="0">Remove</option>

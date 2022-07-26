@@ -6,7 +6,7 @@ import Spinner from "./Spinner";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Detail({addToCart}) {
+export default function Detail({dispatch}) {
     const {id} = useParams();
     const {data: product, error, loading} = useFetch(`products/${id}`)
     const navigate = useNavigate()
@@ -33,7 +33,7 @@ export default function Detail({addToCart}) {
         </select>
         <p>
             <button disabled={!sku} className="btn btn-primary" onClick={() => {
-                addToCart(id, sku)
+                dispatch({type:"add", id, sku})
                toast.success("Item added")
             }}
             >Add to cart</button>

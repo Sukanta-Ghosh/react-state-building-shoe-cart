@@ -34,3 +34,11 @@ Derived state benefits:
 
 1. Reduced the amount of state we had to store
 2. Assures error state is valid because it recalculates on each render
+
+## Managing State via Refs
+
+1. Implementing Uncontrolled Inputs
+2. Avoiding Setting State on Uncontrolled Components.
+   1. Cause: If we navigat away before the API call completes, the set state call occurs on the unmounted component.
+   2. In this case react throw error. Ref can be used to chek of the component is mounted.
+3. Storing a Previous Value

@@ -5,6 +5,7 @@ import Spinner from "./Spinner";
 
 export default function Cart({ cart, updateQuantity }) {
   const navigate = useNavigate()
+  //Each time the cart renders, the urls array is recreated
   const urls = cart.map((i) => `products/${i.id}`);
   const { data: products, loading, error } = useFetchAll(urls);
 

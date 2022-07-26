@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useCart } from "./cartContext";
 import PageNotFound from "./PageNotFound";
 import useFetch from "./services/useFetch";
 import Spinner from "./Spinner";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-export default function Detail({dispatch}) {
+export default function Detail() {
+    const {dispatch} = useCart()
     const {id} = useParams();
     const {data: product, error, loading} = useFetch(`products/${id}`)
     const navigate = useNavigate()
@@ -37,7 +39,6 @@ export default function Detail({dispatch}) {
                toast.success("Item added")
             }}
             >Add to cart</button>
-            <button className="btn btn-primary" onClick={() => navigate("/cart")}>Go to cart</button>
         </p>
         <img src={`/images/${product.image}`} alt={product.category} width="25%" height="25%"/>
         </div>

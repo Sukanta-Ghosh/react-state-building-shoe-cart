@@ -48,7 +48,6 @@ export default function Detail({addToCart}) {
                toast.success("Item added")
             }}
             >Add to cart</button>
-            <button className="btn btn-primary" onClick={() => navigate("/cart")}>Go to cart</button>
         </p>
         <img src={`/images/${product.image}`} alt={product.category} width="25%" height="25%"/>
         </div>

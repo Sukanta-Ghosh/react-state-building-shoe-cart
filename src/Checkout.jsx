@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useCart } from "./cartContext";
 import { saveShippingAddress } from "./services/shippingService";
 
 /* Has the form been submitted?
@@ -18,7 +19,8 @@ const emptyAddress = {
   country: "",
 };
 
-export default function Checkout({ cart, dispatch }) {
+export default function Checkout() {
+    const {dispatch} = useCart()
     //Stores the checkout form data
     /* Seperate useState calls can be declared but  when data is 
     related prefered a single useState call. */

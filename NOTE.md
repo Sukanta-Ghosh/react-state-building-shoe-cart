@@ -46,3 +46,10 @@ Derived state benefits:
 ## Managing Complex State with useReducer
 
 1. Reducer: A function that returns new state when passed an action.
+
+## Sharing State and Functions via Context
+
+1. Custom useContext hook benefits:
+   1. Easier to consume
+   2. Protects the context
+   3. Can display helpful errors if misused
